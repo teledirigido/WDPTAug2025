@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body { background-color: #f1f1f1; }
+    section {
+      display:flex;
+      flex-direction: row;
+    }
+    article {
+      background-color: #CCC;
+      padding:2rem;
+    }
+    aside {
+      min-width:200px;
+      background-color: aquamarine;
+    }
+    nav ul {
+      margin:0;
+      padding-left: 0;
+      display:flex;
+      list-style: none;
+      gap: 2rem;
+      justify-content:center;
+      padding-bottom: 1rem;
+    }
+    .last-element { background-color: red; }
+    /* .site-header {
+      position: fixed;
+      top:0%;
+      background-color: #f1f1f1;
+      width:100%;
+      }
+      nav {
+        padding-top: 100px;
+      }
+      */
+      @media all and (max-width:720px) {
+        section {
+          flex-direction: column;
+        }
+      }
+
+      @media all and (min-width:800px) {
+        body {
+          background-color: yellow;
+        }
+      }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>My first page</h1>
+  </header>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact Us</li>
+    </ul>
+  </nav>
+  <section>
+    <article>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, earum!</h3>
+      <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates harum nisi aspernatur dolorum ipsa, qui necessitatibus vero eius velit veniam natus, inventore facere officiis sit corporis consequatur porro? Ea magnam a beatae corporis pariatur eligendi? Esse molestiae temporibus id expedita quis nobis nam, at cupiditate amet fugit ea doloremque corporis necessitatibus laudantium accusamus labore sequi voluptates, assumenda facere itaque, consequatur obcaecati blanditiis officiis eaque? Magnam aperiam molestias adipisci consequuntur perspiciatis sunt iure nulla praesentium tempora voluptate! Odit, delectus voluptatem animi obcaecati quo cumque numquam assumenda, dicta perferendis consectetur veniam maxime? Omnis repellendus maxime enim cum numquam illum ratione eum dolorem.</div>
+    </article>
+    <aside>
+      <ol>
+        <li>Link 1</li>
+        <li>Link 2</li>
+        <li><span>Link 3</span></li>
+      </ol>
+    </aside>
+  </section>
+</body>
+</html>
