@@ -1,0 +1,80 @@
+body {
+  background-color: #f1f1f1;
+}
+
+/* Utility First CSS Classes */
+
+.bg-white {
+  background-color: #FFF;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.p-2 {
+  padding:2rem;
+}
+
+/* Semantic Classes */
+
+/* .intro {
+ h1 {
+  font-size: 90px;
+ }
+} */
+
+.intro > h1 {
+  font-size: 90px;
+}
+
+.content {
+  padding:2rem;
+  text-decoration: underline;;
+}
+
+.intro + .content {
+  background-color: red;
+}
+
+/* Mediqueries */
+@media all and (max-width:640px) {
+  body { 
+    background-color: yellow; 
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .intro {
+    border:1px solid black;
+  }
+}
+
+@media all and (min-width:1280px) {
+  .intro {
+    box-shadow: 0 0 30px #CCC;
+    border-radius: 10px;
+  }
+  h1 {
+    font-size: 25vw
+  }
+}
+
+@media all and (max-height: 400px) {
+  body {
+    background-color: red;
+  }
+}
+
+@media all and (max-height: 400px) and (max-width: 640px) {
+  body {
+    opacity: 0.5;
+  }
+}
+
+
+@media print {
+  h1 { 
+    font-family: 'Courier New', Courier, monospace;
+    color: green;
+  }
+  
+}

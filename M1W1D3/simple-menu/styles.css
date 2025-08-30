@@ -1,0 +1,75 @@
+body {
+  background-color: #CCC;
+}
+
+.menu {
+  background-color: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.menu .item {
+  padding: 1rem;
+}
+
+.menu .item:nth-child(1) {
+  flex-grow: 1;
+}
+
+@media all and (max-width:640px) {
+  .menu {
+    flex-direction: column;
+  }
+  .item {
+    border-bottom: 1px solid white;
+  }
+  .item:hover {
+    background-color: #fff;
+  }
+  section {
+    flex-wrap: wrap;
+  }
+  article {
+    width: 50%;
+    box-sizing: border-box;
+  }
+
+}
+
+.articles-wrapper {
+  display: flex;
+  margin-top: 2rem;
+  gap:1rem;
+}
+
+.article-item {
+  padding:1.5rem;
+  width: calc(50% - 0.5rem);
+  background-color: #FFF;
+}
+
+.main-article {
+  background: #FFF;
+  display: flex;
+  margin-top: 1rem;
+  align-items: flex-end;
+}
+
+.main-article--header {
+  padding: 2rem;
+}
+
+/* When is bigger more than 640px do this ⬇️ */
+@media all and (min-width:640px) {
+  .main-article--content,
+  .main-article--header {
+    width: 50%;
+  }
+}
+
+@media all and (max-width: 640px) {
+  .main-article--content {
+    padding:2rem;
+  }
+}
