@@ -1,0 +1,100 @@
+/* CSS RESET - do not remove */
+/* Reset default browser styles and provide a consistent starting point */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: lighter;
+}
+
+/*  Set the font */
+body {
+  font-family: "Helvetica", sans-serif;
+  line-height: 135%;
+}
+
+/* STYLES */
+/* Write your CSS below */
+.hero {
+  display:grid;
+  grid-template-areas: "a";
+  text-align: center;
+  color: white;
+  align-items: center;
+}
+
+.hero img {
+  width:100%;
+  height: auto;
+}
+
+.hero h1  {
+  font-size: 5rem;
+}
+
+.hero img,
+.hero h1 {
+  grid-area: a;
+}
+
+.hero-large {
+  height: 500px; 
+  overflow: hidden;
+  /* Img is nested into .hero-large. This is the same as .hero-large .img { ... } */
+  img {
+    height:inherit;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+.main-section {
+  padding:5rem;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-section h3 {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid #000;
+  margin-top: 2rem;
+}
+
+.recipe-info {
+  max-width: 400px;
+  margin:0 auto;
+  display: block;
+}
+
+ul {
+  padding-left: 1.5rem;
+  list-style: '- ';
+}
+
+.cooking-info {
+  max-width: 350px;
+  padding-top: 2rem;
+  display: block;
+  height: auto;
+  margin:0 auto;
+}
+
+/* .image-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.image-wrapper img {
+  max-width: 300px;
+} */
