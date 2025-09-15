@@ -18,6 +18,7 @@ console.log('----------------------');
 // create an index equal to zero, 
 // stop on array.length, and increase array 
 // on one on each iteration
+
 for(let i = 0 ; i < original.length ; i++ ) { 
   console.log(original[i]);
 }
