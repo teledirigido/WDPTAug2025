@@ -15,6 +15,7 @@ class ElectricCar extends Car {
   
   constructor(brand, model, batteryKwh) {
     super(brand,model); // This calls the parent constructor method()
+    this.brand = 'aaa';
     this.batteryKwh = batteryKwh; // This are additional class properties from this ElectricCar class
   }
 
