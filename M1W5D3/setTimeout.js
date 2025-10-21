@@ -6,8 +6,6 @@ const programingSteps = [
   "Take a rest"
 ];
 
-
-
 setTimeout( () => {
   console.log('Delayed:', programingSteps[0]);  
 }, 10)
