@@ -2,7 +2,9 @@
 
 This is a public repository with notes, code and supporting material from the class of Web Development Part-Time at Ironhack.
 
-Folder Structure
+---
+
+### Folder Structure
 
 |Folder|Description|
 |------|-----------|
