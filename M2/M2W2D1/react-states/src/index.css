@@ -1,0 +1,12 @@
+.app-light {
+  background: #FFF;
+}
+
+.app-dark {
+  background-color: #333;
+  color:#fff;
+}
+
+.item-list {
+  margin-bottom: 2rem;
+}
