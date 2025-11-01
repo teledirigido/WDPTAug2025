@@ -1,0 +1,17 @@
+nav {
+  ul {
+    padding-left: 0;
+    display: flex;
+    list-style:none;
+    gap:1rem;
+    border-bottom:1px solid;
+  }
+  a {
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+  .selected {
+    background-color: blueviolet;
+    color: white;
+  }
+}
