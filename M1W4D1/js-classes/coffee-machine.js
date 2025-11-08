@@ -39,7 +39,7 @@ class CoffeeMachine {
 	// Implement makeCoffee(customer) method
 	makeCoffee(customer) {
 		CoffeeMachine.order += 1
-		if (this.#heatWater && this.#grindBeans) {
+		if (this.#heatWater() && this.#grindBeans()) {
 			console.log(
 				`☕️ Coffee Machine: Your ${customer}, coffee is ready. Enjoy`
 			)
@@ -51,3 +51,6 @@ myCoffeeShop.makeCoffee('Juan')
 myCoffeeShop.makeCoffee('Alice')
 myCoffeeShop.addWater()
 myCoffeeShop.makeCoffee('Peter')
+
+const orderCount = CoffeeMachine.order
+console.log(`Total orders: ${orderCount}`)
