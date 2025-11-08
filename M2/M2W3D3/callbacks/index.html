@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callbacks Demo</title>
+  <style>
+    h2, h3, hr, details { margin-top: 4rem;}
+    pre { background-color: #DDD; padding:1rem; line-height:165%; } 
+    pre code { background-color: transparent; }
+    summary h3 { margin-top: 0; display: inline-block; margin-bottom: 0; }
+    details { border:1px solid #CCC; padding:1rem; }
+    details summary:hover { cursor: pointer; }
+    code { background-color: #DDD; padding:0.01rem 1rem;}
+  </style>
+</head>
+<body>
+  <div style="max-width: 800px; margin: 20px; font-family: Arial, sans-serif;">
+    <h1>Callbacks Demo - Student Dashboard</h1>
+    <h2>Overview</h2>
+    <p>This demo simulates fetching data from multiple microservices (Student API, Course API, Teacher API).</p>
+    
+    <h2>Available Functions</h2>
+    
+    <details>
+      <summary><h3>getStudentById(id, callback)</h3></summary>
+      <ul>
+        <li>Takes a student ID and a callback function</li>
+        <li>Simulates an async operation (like an API call) with setTimeout</li>
+        <li>When data is ready, executes the callback function passing the student object to it</li>  
+      </ul>
+    </details>
+      
+    
+    <p><strong>Parameters:</strong></p>
+    <ul>
+      <li><code>id</code> (number) - The student ID to fetch</li>
+      <li><code>callback</code> (function) - Function executed when data is ready. Receives the student object.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>getStudentById(1, (student) => {
+  console.log(student); // { id: 1, name: "Alice", courseId: 1 }
+});</code></pre>
+
+    <details>
+      <summary><h3>getCourseById(id, callback)</h3></summary>
+      <ul>
+        <li>Takes a course ID and a callback function</li>
+        <li>Simulates an async operation (like an API call) with setTimeout</li>
+        <li>When data is ready, executes the callback function passing the course object to it</li>
+      </ul>
+    </details>
+
+    <p><strong>Parameters:</strong></p>
+    <ul>
+      <li><code>id</code> (number) - The course ID to fetch</li>
+      <li><code>callback</code> (function) - Function executed when data is ready. Receives the course object.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>getCourseById(1, (course) => {
+  console.log(course); // { id: 1, name: "Web Development", teacherId: 1 }
+});</code></pre>
+
+    <details>
+      <summary><h3>getTeacherById(id, callback)</h3></summary>
+      <ul>
+        <li>Takes a teacher ID and a callback function</li>
+        <li>Simulates an async operation (like an API call) with setTimeout</li>
+        <li>When data is ready, executes the callback function passing the teacher object to it</li>
+      </ul>
+    </details>
+
+    <p><strong>Parameters:</strong></p>
+    <ul>
+      <li><code>id</code> (number) - The teacher ID to fetch</li>
+      <li><code>callback</code> (function) - Function executed when data is ready. Receives the teacher object.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>getTeacherById(1, (teacher) => {
+  console.log(teacher); // { id: 1, name: "Prof. Smith" }
+});</code></pre>
+
+    <details>
+      <summary><h3>getAssignmentsByCourseId(courseId, callback)</h3></summary>
+      <ul>
+        <li>Takes a course ID and a callback function</li>
+        <li>Simulates an async operation (like an API call) with setTimeout</li>
+        <li>When data is ready, executes the callback function passing an array of assignment objects for that course</li>
+      </ul>
+    </details>
+
+    <p><strong>Parameters:</strong></p>
+    <ul>
+      <li><code>courseId</code> (number) - The course ID to fetch assignments for</li>
+      <li><code>callback</code> (function) - Function executed when data is ready. Receives an array of assignment objects.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>getAssignmentsByCourseId(1, (assignments) => {
+  console.log(assignments);
+  // [
+  //   { id: 1, courseId: 1, title: "Build a React App", dueDate: "2024-03-15" },
+  //   { id: 2, courseId: 1, title: "CSS Flexbox Exercise", dueDate: "2024-03-20" },
+  //   ...
+  // ]
+});</code></pre>
+
+    <hr>
+
+    <h2>Exercises - Progressive Exercise List (Easy to Hard)</h2>
+
+    <h3>Exercise 1:</h3>
+    <p>Display <code>STUDENT NAME</code> and the <code>COURSE NAME</code></p>
+    <p><strong>Example:</strong> "Student [name] is enrolled in [course name]"</p>
+    <p><strong>Steps:</strong></p>
+    <ol>
+      <li>Get student by ID</li>
+      <li>Get their course using student's courseId</li>
+    </ol>
+
+    <h3>Exercise 2:</h3>
+    <p><strong>Output:</strong> "Student [name] is taking [course name] taught by [teacher name]"</p>
+    <p><strong>Steps:</strong></p>
+    <ol>
+      <li>Get student by ID</li>
+      <li>Get their course using student's courseId</li>
+      <li>Get the teacher using course's teacherId</li>
+    </ol>
+
+    <h3>Exercise 3:</h3>
+    <p><strong>Output:</strong> Course info, teacher info, and assignment list</p>
+    <p><strong>Steps:</strong></p>
+    <ol>
+      <li>Get student by ID</li>
+      <li>Get their course</li>
+      <li>Get the teacher</li>
+      <li>Get all assignments for that course</li>
+    </ol>
+
+    <h3>Exercise 5: Same as #4 but with Promises/Async-Await</h3>
+    <p><strong>Requirements:</strong> Same as Exercise 4</p>
+    <p><strong>Goal:</strong> Show how much cleaner it is with promises compared to callback hell</p>
+
+    <hr>
+    <h2>Note</h2>
+    <p>All functions simulate async operations with setTimeout. Open the console to see the examples in action.</p>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="scripts-functions-promises.js"></script>
+  <script src="scripts-2.js"></script>
+</body>
+</html>

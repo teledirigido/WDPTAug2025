@@ -1,0 +1,9 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input:focus {
+  background-color: #f1f1f1;
+  outline: 0 none;
+  box-shadow: 0 0 30px #DDD;
+}
