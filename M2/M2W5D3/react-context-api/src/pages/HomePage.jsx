@@ -17,6 +17,10 @@ export default function HomePage({ value }) {
         <hr />
         <p>{user.email}</p>
       </section>
+      <div className="welcome-card">
+        <h2 className="welcome-card--title">asdasd</h2>
+        <a href="#" className="welcome-card--button">Button</a>
+      </div>
     </>
   )
 }
