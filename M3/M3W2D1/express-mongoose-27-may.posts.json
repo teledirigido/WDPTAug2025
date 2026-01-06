@@ -1,0 +1,53 @@
+[{
+  "_id": {
+    "$oid": "6835c7fb52cd1cc65228a061"
+  },
+  "title": "Hello world",
+  "author": {
+    "$oid": "6835c6a4074c0897dc77a427"
+  },
+  "publishDate": {
+    "$date": "2025-05-27T14:11:07.094Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68642a67dec1b34f759937f2"
+  },
+  "title": "My updated post v5",
+  "author": {
+    "$oid": "6835c6a4074c0897dc77a427"
+  },
+  "publishDate": {
+    "$date": "2025-07-01T18:35:19.337Z"
+  },
+  "__v": 0,
+  "content": "This is the fifth version of the post"
+},
+{
+  "_id": {
+    "$oid": "695d3f6e2ba60b2245378d6b"
+  },
+  "title": "Another great post",
+  "author": {
+    "$oid": "6835c6a4074c0897dc77a427"
+  },
+  "publishDate": {
+    "$date": "2026-01-06T16:59:26.810Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695d3fff2ba60b2245378d71"
+  },
+  "title": "Another great post",
+  "author": {
+    "$oid": "6835c6a4074c0897dc77a427"
+  },
+  "publishDate": {
+    "$date": "2026-01-06T17:01:51.498Z"
+  },
+  "__v": 0
+}]
