@@ -8,11 +8,15 @@ const PORT = 3000;
 app.use(logger('dev')); // Morgan configuration
 app.use(express.json());
 
+// initial route on root folder > http://localhost:3000/
 app.get('/', (req, res) => {
   res.json({ 'data': true })
 });
 
-app.use('/', require('./routes/posts') );
+app.use('/', [
+  require('./routes/posts'),
+  require('./routes/author')
+]);
 
 // Start the server
 app.listen(PORT, () => {

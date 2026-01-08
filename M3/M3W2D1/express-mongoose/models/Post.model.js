@@ -7,10 +7,18 @@ const postSchema = new Schema({
     type: String,
     required: true
   },
-  content: String,
+  content: {
+    type: String,
+    required: false
+  },
   publishedDate: {
     type: Date,
     default: Date.now
+  },
+  author: {
+    ref: "Author",
+    type: mongoose.Schema.Types.ObjectId,
+    required: true
   }
 });
 
@@ -18,3 +26,8 @@ const postSchema = new Schema({
 const Post = mongoose.model("Post", postSchema);
 
 module.exports = Post;
+
+// Model: Capital first letter singular
+// Collection: All lowercase plural
+// Eg: Post -> posts
+// Eg: Mushroom -> mushrooms

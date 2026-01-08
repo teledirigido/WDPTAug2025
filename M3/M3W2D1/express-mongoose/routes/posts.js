@@ -28,7 +28,7 @@ router.get('/posts', async (req, res) => {
 router.get('/posts/:id', async (req,res) => {
   try {
     const { id } = req.params;
-    const post = await Post.findById(id);
+    const post = await Post.findById(id).populate('author');
     res.json(post);
   } catch (error) {
     res.json(error)
@@ -37,8 +37,8 @@ router.get('/posts/:id', async (req,res) => {
 
 // Create a post
 router.post('/posts', async (req, res) => {
-  const { title, content } = req.body;
-  const newPost = await Post.create({ title, content });
+  const { title, content, author } = req.body;
+  const newPost = await Post.create({ title, content, author });
   res.json(newPost);
 });
 
