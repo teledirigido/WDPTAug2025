@@ -28,9 +28,12 @@ router.get("/projects", (req, res, next) => {
     });
 });
 
+
 //  GET /api/projects/:projectId -  Retrieves a specific project by id
 router.get("/projects/:projectId", (req, res, next) => {
   const { projectId } = req.params;
+
+  console.log(req); 
 
   if (!mongoose.Types.ObjectId.isValid(projectId)) {
     res.status(400).json({ message: "Specified id is not valid" });

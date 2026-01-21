@@ -54,7 +54,7 @@ router.post('/signup', (req, res) => {
 
     // Or this:
     res.json({
-      _id: createdUser._id,
+      _id: createdUser.id,
       email: createdUser.email,
       name: createdUser.name,
     }); // We should never pass the hashedPassword here
@@ -100,6 +100,9 @@ router.post('/login', (req, res) => {
         );
 
         res.json({ authToken: authToken });
+        // Output:
+        // "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTY5MjYzZGEyNjgzMjRjY2MwNjc2N2MiLCJlbWFpbCI6Im1pZ3VlbEBpcm9uaGFjay5jb20iLCJuYW1lIjoiTWlndWVsIElyb25oYWNrIiwiaWF0IjoxNzY4NDk4OTA1LCJleHAiOjE3Njg1MjA1MDV9.HWBDQI8zMzXnbUGf86GDBMyNtH1PWhKhWQfpfMOosuk"
+
 
       } else {
         res.json({ message: "Unable to authenticate" })
