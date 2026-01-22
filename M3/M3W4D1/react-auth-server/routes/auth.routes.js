@@ -10,7 +10,7 @@ const saltRounds = 10;
 
 
 // POST /auth/signup  - Creates a new user in the database
-router.post('/signup', (req, res, next) => {
+router.post('/signup', async (req, res, next) => {
   const { email, password, name } = req.body;
 
   // Check if email or password or name are provided as empty string 
@@ -33,16 +33,46 @@ router.post('/signup', (req, res, next) => {
     return;
   }
 
+  /**
+  try {
+    
+    const foundUser = await User.findOne({ email })
+    
+    if (foundUser) {
+      res.status(400).json({ message: 'User already exists!' });
+      return;
+    }
+
+    // If email is unique, proceed to hash the password
+    const salt = bcrypt.genSaltSync(saltRounds);
+    const hashedPassword = bcrypt.hashSync(password, salt);
+
+    // Create the new user in the database
+    // We return a pending promise, which allows us to chain another `then` 
+    const newUser = await User.create({ email, password: hashedPassword, name });
+    const { _id } = newUser;
+    const user = { email, name, _id };
+    res.status(201).json({ user: user });
+
+  } catch(error) {
+    res.status(400).json('my own message');
+  }
+  */
 
   // Check the users collection if a user with the same email already exists
   User.findOne({ email })
     .then((foundUser) => {
       // If the user with the same email already exists, send an error response
+
+      console.log(foundUser);
+
       if (foundUser) {
+        console.log('User has been found');
         res.status(400).json({ message: "User already exists." });
         return;
+        // throw new Error('User Already exists')
       }
-
+      
       // If email is unique, proceed to hash the password
       const salt = bcrypt.genSaltSync(saltRounds);
       const hashedPassword = bcrypt.hashSync(password, salt);
@@ -50,17 +80,21 @@ router.post('/signup', (req, res, next) => {
       // Create the new user in the database
       // We return a pending promise, which allows us to chain another `then` 
       return User.create({ email, password: hashedPassword, name });
+
     })
     .then((createdUser) => {
       // Deconstruct the newly created user object to omit the password
       // We should never expose passwords publicly
-      const { email, name, _id } = createdUser;
-    
-      // Create a new object that doesn't expose the password
-      const user = { email, name, _id };
-
-      // Send a json response containing the user object
-      res.status(201).json({ user: user });
+      if (createdUser) {
+        const { email, name, _id } = createdUser;
+      
+        // Create a new object that doesn't expose the password
+        const user = { email, name, _id };
+  
+        // Send a json response containing the user object
+        res.status(201).json({ user: user });
+        return;
+      }
     })
     .catch(err => {
       console.log(err);
